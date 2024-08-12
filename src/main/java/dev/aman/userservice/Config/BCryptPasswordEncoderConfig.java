@@ -12,3 +12,5 @@ public class BCryptPasswordEncoderConfig {
         return new BCryptPasswordEncoder();
     }
 }
+
+// This just need dependency
