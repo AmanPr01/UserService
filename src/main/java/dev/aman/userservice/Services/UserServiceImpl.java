@@ -151,4 +151,16 @@ public class UserServiceImpl implements UserService {
         newToken.setDeleted(true);
         tokenRepository.save(newToken);
     }
+
+    // this is only for testing purpose for testing ServiceDiscovery
+    @Override
+    public User getUserDetails(Long userID) {
+        Optional<User> optionalUser = userRepository.findById(userID);
+
+        if (optionalUser.isEmpty()) {
+            throw new RuntimeException("User with id: " + userID + " not found.");
+        }
+
+        return optionalUser.get();
+    }
 }

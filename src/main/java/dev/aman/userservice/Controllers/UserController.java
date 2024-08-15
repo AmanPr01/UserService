@@ -82,4 +82,11 @@ public class UserController {
     After that you have to submit it by clicking on the submit button marked as an "upward arrow".
      */
 
+    // this is for testing ServiceDiscovery
+    @GetMapping("/{id}")
+    public UserDTO getUserDetails(@PathVariable("id") Long userId) {
+        System.out.println("Received getUserDetails API request");
+        return UserDTO.fromUser(userService.getUserDetails(userId));
+    }
+
 }
