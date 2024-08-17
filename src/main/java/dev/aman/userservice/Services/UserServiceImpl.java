@@ -58,21 +58,22 @@ public class UserServiceImpl implements UserService {
 
             user = userRepository.save(user);
 
+            // The below code is for emailService
             // Publish the user inside the Queue.
-            SendEmailEventDTO emailEventDTO = new SendEmailEventDTO();
-            emailEventDTO.setTo(email);
-            emailEventDTO.setFrom("felixfether@gmail.com");
-            emailEventDTO.setSubject("Welcome to Scaler");
-            emailEventDTO.setBody("Welcome to Scaler. We are very happy to have you on our platform. All the best.");
-
-            try {
-                kafkaTemplate.send(
-                        "sendEmail",
-                        objectMapper.writeValueAsString(emailEventDTO)
-                );
-            } catch (JsonProcessingException e) {
-                throw new RuntimeException(e);
-            }
+//            SendEmailEventDTO emailEventDTO = new SendEmailEventDTO();
+//            emailEventDTO.setTo(email);
+//            emailEventDTO.setFrom("felixfether@gmail.com");
+//            emailEventDTO.setSubject("Welcome to Scaler");
+//            emailEventDTO.setBody("Welcome to Scaler. We are very happy to have you on our platform. All the best.");
+//
+//            try {
+//                kafkaTemplate.send(
+//                        "sendEmail",
+//                        objectMapper.writeValueAsString(emailEventDTO)
+//                );
+//            } catch (JsonProcessingException e) {
+//                throw new RuntimeException(e);
+//            }
         }
 
         return user;
