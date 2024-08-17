@@ -80,6 +80,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((authorize) -> authorize
                         .anyRequest().permitAll()
                 )
+                // These below are the security layers added by our browser.
+                // We can disable them.
                 .cors().disable()
                 .csrf().disable()
                 // Form login handles the redirect to the login page from the
@@ -90,6 +92,7 @@ public class SecurityConfiguration {
     }
 
     // We need to fetch user from database and convert it to the UserDetailsService.
+    // That's we commented it out to not hard code it.
 //    @Bean
 //    public UserDetailsService userDetailsService() {
 //        UserDetails userDetails = User.builder()
@@ -180,4 +183,4 @@ public class SecurityConfiguration {
 https://docs.spring.io/spring-authorization-server/reference/getting-started.html
  */
 
-// The link from where i copied above code.
+// The link from where I copied above code.
