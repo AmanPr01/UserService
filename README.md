@@ -104,4 +104,4 @@ The User Service is a core component of the E-Commerce Application responsible f
 - **[Product Service](https://github.com/AmanPr01/E-Commerce)**: Manages product information and operations.
 - **[Email Service](https://github.com/AmanPr01/EmailService)**: Handles asynchronous email notifications.
 - **[Payment Service](https://github.com/AmanPr01/PaymentService)**: Manages payment processing and transactions.
-   
+- **[Service Discovery](https://github.com/AmanPr01/ServiceDiscovery)**: Central registry for service registration and discovery, enabling dynamic interaction between microservices.
